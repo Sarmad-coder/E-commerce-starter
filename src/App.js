@@ -1,4 +1,4 @@
-import { BrowserRouter,Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Signup from "./Components/signup/signup"
 import Login from "./Components/login/login"
 import { Provider } from "react-redux"
@@ -8,9 +8,14 @@ import Home from "./Components/Home/Home"
 import AdminDashboard from "./Components/admin/dashboard/AdminDashboard"
 import AddProduct from "./Components/admin/AddProduct/AddProduct"
 import ContactUs from "./Components/Contact us/ContactUs"
+import StripeContainer from "./Components/payment/StripeContainer";
+
+
 function App() {
+
   return <BrowserRouter>
     <Provider store={myStore}>
+
       <Routes>
 
         <Route path="/" element={<Home />} />
@@ -23,10 +28,12 @@ function App() {
         </Route>
         <Route path="/admin/addProduct" element={<AddProduct />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/Payment" element={<StripeContainer />} />
 
 
 
       </Routes>
+
     </Provider>
   </BrowserRouter>
 }
